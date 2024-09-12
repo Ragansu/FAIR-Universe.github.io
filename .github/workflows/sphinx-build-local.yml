@@ -56,7 +56,6 @@ jobs:
 
     # Step 8: Add and Commit Changes
     - name: Commit built documentation
-      if: env.has_changes == 'true'
       run: |
         git add .
         git commit -m "Auto-build Sphinx documentation"
