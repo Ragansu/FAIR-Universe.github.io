@@ -3,7 +3,7 @@ name: Build and Deploy Sphinx Documentation
 on:
   push:
     branches:
-      - master  # Trigger on pushes to the main branch
+      - local-build  # Trigger on pushes to the main branch
 
 jobs:
   build:
@@ -19,6 +19,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: FAIR-Universe/HEP-Challenge # The Sphinx source repository
+        ref: update-doc-rst # The branch containing the Sphinx source files
         token: ${{ secrets.GITHUB_TOKEN }}  # Access token stored as a secret
         path: HEP-Challenge # Checkout to a folder
 
@@ -59,7 +60,7 @@ jobs:
         git add .
         git commit -m "Auto-build Sphinx documentation"
 
-    # Step 9: Push Changes Back to Master
-    - name: Push changes to master
+    # Step 9: Push Changes Back to local-build
+    - name: Push changes to local-build
       run: |
-        git push origin master
+        git push origin local-build
