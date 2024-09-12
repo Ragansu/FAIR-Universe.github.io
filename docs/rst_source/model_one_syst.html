@@ -58,7 +58,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="simple_one_syst_model.html">simple_one_syst_model</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="simple_one_syst_model.html#example-statistical-only-and-1-systematic-case-analysis">Example: Statistical-Only and 1-Systematic Case Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="boosted_decision_tree.html">Boosted_Becision_Tree module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Model One Syst</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Model One Syst</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simple_one_syst_model.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simple_one_syst_model.model.balance_set"><code class="docutils literal notranslate"><span class="pre">balance_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simple_one_syst_model.model.train_test_split"><code class="docutils literal notranslate"><span class="pre">train_test_split()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="statistical_analysis.html">Statistical_Analysis module</a></li>
 </ul>
 </li>
@@ -94,8 +99,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="model-one-syst">
-<h1>Model One Syst<a class="headerlink" href="#model-one-syst" title="Link to this heading"></a></h1>
+  <section id="module-simple_one_syst_model.model">
+<span id="model-one-syst"></span><h1>Model One Syst<a class="headerlink" href="#module-simple_one_syst_model.model" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="simple_one_syst_model.model.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simple_one_syst_model.model.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">get_train_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">systematics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simple_one_syst_model.model.Model" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a model class to be submitted by the participants in their submission.</p>
+<dl class="simple">
+<dt>Atributes:</dt><dd><ul class="simple">
+<li><p>get_train_set (callable): A function that returns a dictionary with data, labels, weights, detailed_labels and settings.</p></li>
+<li><p>systematics (object): A function that can be used to get a dataset with systematics added.</p></li>
+<li><p>model (object): The model object.</p></li>
+<li><p>name (str): The name of the model.</p></li>
+<li><p>stat_analysis (object): The statistical analysis object.</p></li>
+</ul>
+</dd>
+<dt>Methods:</dt><dd><ul class="simple">
+<li><p>fit(): Trains the model.</p></li>
+<li><p>predict(test_set): Predicts the values for the test set.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="simple_one_syst_model.model.Model.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simple_one_syst_model.model.Model.fit" title="Link to this definition"></a></dt>
+<dd><p>Trains the model.</p>
+<dl class="simple">
+<dt>Functionality:</dt><dd><p>This function can be used to train a model. If <cite>re_train</cite> is True, it balances the dataset,
+fits the model using the balanced dataset, and saves the model. If <cite>re_train</cite> is False, it
+loads the saved model and calculates the saved information. The saved information is used
+to compute the train results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simple_one_syst_model.model.Model.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simple_one_syst_model.model.Model.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the values for the test set.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>test_set (dict): A dictionary containing the data and weights</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>dict: A dictionary with the following keys:
+- ‘mu_hat’: The predicted value of mu.
+- ‘delta_mu_hat’: The uncertainty in the predicted value of mu.
+- ‘p16’: The lower bound of the 16th percentile of mu.
+- ‘p84’: The upper bound of the 84th percentile of mu.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="simple_one_syst_model.model.balance_set">
+<span class="sig-prename descclassname"><span class="pre">simple_one_syst_model.model.</span></span><span class="sig-name descname"><span class="pre">balance_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simple_one_syst_model.model.balance_set" title="Link to this definition"></a></dt>
+<dd><p>Balances the training set by equalizing the number of background and signal events.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>training_set (dict): A dictionary containing the data, labels, weights, detailed_labels, and settings.</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict: A dictionary containing the balanced training set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="simple_one_syst_model.model.train_test_split">
+<span class="sig-prename descclassname"><span class="pre">simple_one_syst_model.model.</span></span><span class="sig-name descname"><span class="pre">train_test_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reweight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simple_one_syst_model.model.train_test_split" title="Link to this definition"></a></dt>
+<dd><p>Splits the data into training and testing sets.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>data_set (dict): A dictionary containing the data, labels, weights, detailed_labels, and settings</p></li>
+<li><p>test_size (float, optional): The size of the testing set. Defaults to 0.2.</p></li>
+<li><p>random_state (int, optional): The random state. Defaults to 42.</p></li>
+<li><p>reweight (bool, optional): Whether to reweight the data. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: A tuple containing the training and testing</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
