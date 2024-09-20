@@ -39,6 +39,7 @@ jobs:
     - name: Build Sphinx Documentation
       run: |
         cd HEP-Challenge
+        mkdir -p docs
         cp -r ../docs/* docs/
         cd docs
         make html
