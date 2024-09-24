@@ -7,8 +7,8 @@ Welcome to FAIR Universe HEP Challenge's documentation!
 =======================================================
 .. raw:: html
 
-   <a href="https://www.example.com" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px;">
-   Click Me
+   <a href="https://fair-universe.lbl.gov/tutorials/Higgs_Uncertainty_Challenge-Codabench_Tutorial.pdf" class="button" style="display: inline-block; padding: 20px 40px; font-size: 16px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px;">
+   Click Here For Tutorial Slides
    </a>
 
 .. toctree::
