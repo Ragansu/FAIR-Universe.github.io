@@ -11,6 +11,7 @@ Welcome to FAIR Universe HEP Challenge's documentation!
    Click Here For Tutorial Slides
    </a>
 
+|
 
 .. toctree::
    :maxdepth: 2
