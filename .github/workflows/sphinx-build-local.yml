@@ -42,6 +42,7 @@ jobs:
         cp -r ../docs/* docs/
         mkdir -p docs/pages
         cp pages/* docs/pages/
+        cp Local_setup.md docs/pages/
         cd docs
         make html
 

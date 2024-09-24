@@ -17,6 +17,7 @@ Welcome to FAIR Universe HEP Challenge's documentation!
    :maxdepth: 1
    :caption: Contents:
 
+   pages/Local_setup.md
    pages/overview.md
    pages/data.md
    pages/evaluation.md
