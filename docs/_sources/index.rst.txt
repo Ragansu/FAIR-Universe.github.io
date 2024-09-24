@@ -19,14 +19,17 @@ Welcome to FAIR Universe HEP Challenge's documentation!
 |
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Pages:
 
-   pages/Local_setup.md
    pages/overview.md
    pages/data.md
    pages/evaluation.md
    pages/prizes.md
    pages/starting_kit.md
+
+.. toctree::
+   :maxdepth: 2
+   
    rst_source/modules
    pages/terms.md
 
