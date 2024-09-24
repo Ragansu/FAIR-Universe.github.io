@@ -13,6 +13,10 @@ Welcome to FAIR Universe HEP Challenge's documentation!
 
 |
 
+.. include:: pages/Local_setup.md
+   :parser: myst_parser.sphinx_
+
+|
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
