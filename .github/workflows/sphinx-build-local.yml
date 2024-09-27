@@ -19,6 +19,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: FAIR-Universe/HEP-Challenge # The Sphinx source repository
+        ref: fix-overview  # The branch to checkout
         token: ${{ secrets.GITHUB_TOKEN }}  # Access token stored as a secret
         path: HEP-Challenge # Checkout to a folder
 
@@ -42,7 +43,6 @@ jobs:
         cp -r ../docs/* docs/
         mkdir -p docs/pages
         cp pages/* docs/pages/
-        cp Local_setup.md docs/pages/
         cd docs
         make html
 

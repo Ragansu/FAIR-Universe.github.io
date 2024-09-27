@@ -13,7 +13,7 @@ Welcome to FAIR Universe HEP Challenge's documentation!
 
 |
 
-.. include:: pages/Local_setup.md
+.. include:: pages/Front_page.md
    :parser: myst_parser.sphinx_
 
 |
@@ -21,6 +21,7 @@ Welcome to FAIR Universe HEP Challenge's documentation!
    :maxdepth: 1
    :caption: Pages:
 
+   pages/Local_setup.md
    pages/overview.md
    pages/data.md
    pages/evaluation.md
