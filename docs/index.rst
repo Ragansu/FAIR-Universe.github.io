@@ -13,11 +13,7 @@ Welcome to FAIR Universe HEP Challenge's documentation!
 
 |
 
-The Fair Universe project is organising the **HiggsML Uncertainty Challenge**, which will/has run from Sep to October 2024.
-
-This HEP and Machine Learning competition is the first to strongly emphasise uncertainties: mastering uncertainties in the input training dataset and outputting credible confidence intervals.
-
-The context is the measurement of the Higgs to tau+ tau- cross section like in `HiggsML challenge on Kaggle <https://www.kaggle.com/c/higgs-boson>`_ in 2014, from a dataset of the 4-momentum signal state. Participants should design an advanced analysis technique that can not only measure the signal strength but also provide a confidence interval, from which correct coverage will be evaluated automatically from pseudo-experiments.
+The Fair Universe project is organising the **HiggsML Uncertainty Challenge**, The context is the measurement of the Higgs Boson signal like in `HiggsML challenge on Kaggle <https://www.kaggle.com/c/higgs-boson>`_ in 2014, Participants should design an advanced analysis technique that can not only measure the signal strength but also provide a confidence interval, from which correct coverage will be evaluated automatically from pseudo-experiments.
 
 The confidence interval should include statistical and systematic uncertainties (concerning detector calibration, background levels, etc…). It is expected that advanced analysis techniques that can control the impact of systematics will perform best, thereby pushing the field of uncertainty-aware AI techniques for HEP and beyond.
 
