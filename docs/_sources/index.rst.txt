@@ -13,13 +13,13 @@ Welcome to FAIR Universe HEP Challenge's documentation!
 
 |
 
-The Fair Universe project is organising the **HiggsML Uncertainty Challenge**, The context is the measurement of the Higgs Boson signal like in `HiggsML challenge on Kaggle <https://www.kaggle.com/c/higgs-boson>`_ in 2014, Participants should design an advanced analysis technique that can not only measure the signal strength but also provide a confidence interval, from which correct coverage will be evaluated automatically from pseudo-experiments.
+The Fair Universe project is organising the **HiggsML Uncertainty Challenge**, following on from the `HiggsML challenge on Kaggle <https://www.kaggle.com/c/higgs-boson>`_ in 2014, the context is the measurement of the Higgs Boson signal but in the presence of systematics unicertainities. Participants should design an advanced analysis technique that can not only measure the signal strength but also provide a confidence interval, from which correct coverage will be evaluated automatically from pseudo-experiments.
 
 The confidence interval should include statistical and systematic uncertainties (concerning detector calibration, background levels, etc…). It is expected that analysis techniques that can control the impact of systematics will perform best, thereby pushing the field of uncertainty-aware AI techniques for HEP and beyond.
 
 There are several information sources regarding the FAIR Universe - HiggsML Uncertainty Challenge:
 
-* `Codabench <https://www.codabench.org/competitions/2977/>`_ : This serves as the platform to submit entries to the competition. It hosts the public `training data <https://www.codabench.org/datasets/download/b9e59d0a-4db3-4da4-b1f8-3f609d1835b2/>`_.
+* `Codabench <https://www.codabench.org/competitions/2977/>`_ : This serves as the platform to submit entries to the competition. It hosts the public training data `Click here to download the dataset (6.5GB) <https://www.codabench.org/datasets/download/b9e59d0a-4db3-4da4-b1f8-3f609d1835b2/>`_.
 
 * `Tutorial Slides <https://fair-universe.lbl.gov/tutorials/Higgs_Uncertainty_Challenge-Codabench_Tutorial.pdf>`_ : These slides will help you register and submit a sample dummy submission.
 
